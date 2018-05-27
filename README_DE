@@ -29,6 +29,13 @@ Die Logdaten werden üblicherweise direkt von Apache an Anonip übergeben. Somit
 werden die unmaskierten IP-Adressen zu keinem Zeitpunkt gespeichert.
 Sie können aber auch im Nachhinein per cat an Anonip übergeben werden.
 
+Hinweis für Nginx-Logs: Diese Version verfügt über eine zusätzliche Option
+'--nginx', bei der zunächst geschaut wird, ob eine Log-Zeile einen Eintrag
+'client:' hat. Ist das der Fall, wird die darauf folgende IP-Adresse anonymisiert,
+anderenfalls die via '--column'-Option konfigurierten. Dadurch kann man sowohl
+das access.log als auch das error.log mit den gleichen Optionen filtern, z.B.
+in der logrotate-Konfiguration.
+
 ===============================================================================
  ++ FUNKTIONEN ++
 ===============================================================================

@@ -22,7 +22,13 @@ addresses are never written to any file.
 
 With the help of cat, it's also possible, to rewrite existing log-files.
 
-This fork is my take on https://github.com/DigitaleGesellschaft/Anonip/issues/1
+**A Note for Nginx logs:** This fork is a take on https://github.com/DigitaleGesellschaft/Anonip/issues/1
+
+As there is no way to configure the actual error log format in Nginx, this
+version has an additional option '--nginx' that will make anonip.py to look for
+a 'client:' string in a log line. If it finds one, it will anonymize it, if not,
+it will anonymize the column configured, that way it is possible to pass access.log
+and error.log with the same options through anonip.py in a logrotate configuration. 
 
 ## FUNCTIONS
 
