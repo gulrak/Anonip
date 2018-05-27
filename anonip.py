@@ -146,7 +146,11 @@ def parse_line(log, config):
     """
     loglist = log.split(" ")
 
-    for index in config.column:
+    col = config.column
+    if config.nginx and 'client:' in loglist:
+        col = [ loglist.index('client:') + 2 ]
+
+    for index in col:
         decindex = index - 1
         try:
             loglist[decindex]
@@ -246,7 +250,7 @@ def truncate_address(address, config):
         return ntop_pack6(s_addr_output)
     else:
         # this shouldn't happen ... handle it anway
-        return config.replace
+        return None # config.replace
 
 
 def verify_ipv4mask(parser, arg):
@@ -408,6 +412,8 @@ def parse_arguments():
     parser.add_argument('--umask', metavar='UMASK',
                         help='set umask',
                         type=lambda x: check_umask(parser, x))
+    parser.add_argument("--nginx", dest="nginx",
+                              action="store_true", help="additional handling of nginx error-logs")
     parser.set_defaults(umask=None)
 
     args = parser.parse_args()
@@ -483,3 +489,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
