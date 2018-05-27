@@ -22,7 +22,7 @@ addresses are never written to any file.
 
 With the help of cat, it's also possible, to rewrite existing log-files.
 
-for usage with nginx see here: https://github.com/DigitaleGesellschaft/Anonip/issues/1
+This fork is my take on https://github.com/DigitaleGesellschaft/Anonip/issues/1
 
 ## FUNCTIONS
 
