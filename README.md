@@ -45,6 +45,8 @@ for usage with nginx see here: https://github.com/DigitaleGesellschaft/Anonip/is
   --user USERNAME     switch user id
   --group GROUPNAME   switch group id
   --umask UMASK       set umask
+  --nginx             additionally try to find ip behind "client:" for
+                      nginx error-log
 ```
 
 ## USAGE

@@ -58,6 +58,8 @@ Sie können aber auch im Nachhinein per cat an Anonip übergeben werden.
   --user USERNAME     wechsle die User-ID
   --group GROUPNAME   wechsle die Gruppen-ID
   --umask UMASK       setze die Umask
+  --nginx             probiert zusätzlich die IP hinter "client:" zu behandeln,
+                      wie sie in nginx Fehler-Logs auftaucht
 
 ===============================================================================
  ++ NUTZUNG ++
